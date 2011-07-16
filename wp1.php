@@ -8,6 +8,7 @@ Version: 0.2
 Author URI: http://sebastian.thiele.me
 */
 $wpg1Options = get_option('wpg1');
+$wpg1Options = get_option('wpg1');
 $plugindir = basename(dirname(__FILE__));
 load_plugin_textdomain( 'wpg1', 'wp-content/plugins/' . $plugindir.'/lang', false );
 include_once('wp1-menue.php');
