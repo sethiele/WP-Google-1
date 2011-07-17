@@ -26,13 +26,13 @@ function wpg1_adminmenue_show()
                     <?php if($wpg1Options['wpg1-addtheme']): ?>
                     <div class="inside">
                         <p>
-                            To add the Google +1 button please use the following code in your template files.
+                            <?php _e('To add the Google +1 button please use the following code in your template files.', 'wpg1'); ?>
                         </p>
                         <p style="font-famuly:Consolas, Monaco, 'Courier New', Courier, monospace; font-weight: bold;">
                             &lt;?php if (function_exists('wpg1_g1button')){ print wpg1_g1button('size'); } ?&gt;
                         </p>
                         <p>
-                            Please use instead of <b>size</b> one of the following values.<br />
+                            <? _e('Please use instead of <b>size</b> one of the following values.', 'wpg1'); ?><br />
                             small (15px), medium (20px), standard (24px) and large (60px)
                         </p>
                     </div>
@@ -49,7 +49,15 @@ function wpg1_adminmenue_show()
                 
             </div>
             <div id="wpg1-footer">
-                This plugin ist provided by <a href="http://www.goopl.de">GooPl.de</a> (<g:plusone size="small" href="http://www.goopl.de" count="false"></g:plusone>) and developed by <a href="http://www.sebastian-thiele.net">Sebastian Thiele</a> (<g:plusone size="small" href="http://www.sebastian-thiele.net" count="false"></g:plusone>).
+                <p>
+                    <?php printf(__('This plugin ist provided by %1$s and developed by %2$s.', 'wpg1'), '<a href="http://www.goopl.de">GooPl.de</a> (<g:plusone size="small" href="http://www.goopl.de" count="false"></g:plusone>)', '<a href="http://www.sebastian-thiele.net">Sebastian Thiele</a> (<g:plusone size="small" href="http://www.sebastian-thiele.net" count="false"></g:plusone>)'); ?>
+                    <?php printf(__('<a href="%s">You can leave a note about a bug or a feature request on github.</a>', 'wpg1'), 'https://github.com/sethiele/WP-Google-1/issues'); ?>
+                </p>
+                <p>
+                    <?php _e('Support the development', 'wpg1'); ?>
+                    <a href="http://flattr.com/thing/345480/WP-Google-1" target="_blank">
+                    <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+                </p>
             </div>
         </div>
     </form>
