@@ -51,9 +51,15 @@ function wpg1_adminmenue()
     add_options_page(__('WP Google+1'), __('WP Google+1'), 'manage_options', 'wpg1', 'wpg1_adminmenue_show');
 }
 
+function wpg1_deactivate()
+{
+    delete_option('wpg1');
+}
+
 add_filter('manage_posts_columns', 'wpg1_article_colum');
 add_filter('manage_posts_custom_column', 'wpg1_article_colum_content');
 add_filter('admin_head', 'wpg1_head');
 add_action('admin_menu', 'wpg1_adminmenue');
 if($wpg1Options['wpg1-addtheme']) add_filter('wp_head', 'wpg1_head');
+register_deactivation_hook( __FILE__, 'wpg1_deactivate' );
 ?>
