@@ -3,7 +3,7 @@ Contributors: sebat
 Tags: social media, google, google +1, seo
 Requires at least: 3.2.1
 Tested up to: 3.2.1
-Stable tag: 0.2
+Stable tag: 0.3
 
 Adds Google +1 stuff to the blog. E.g. a overview of the number of shared articles.
 
@@ -37,6 +37,7 @@ You can find the looks [here](http://www.google.com/intl/de/webmasters/+1/button
 == Changelog ==
 
 = 0.3 =
+* Add: German Language
 * Fix: Some text was not multi language ready
 
 = 0.2 =
