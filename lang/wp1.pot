@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the WP Google+1 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Google+1 0.1\n"
+"Project-Id-Version: WP Google+1 0.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp1\n"
-"POT-Creation-Date: 2011-07-16 21:18:38+00:00\n"
+"POT-Creation-Date: 2011-07-17 09:57:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,16 +12,46 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
+#: wp1.php:27
+msgid "Google +1"
+msgstr ""
+
+#. #-#-#-#-#  plugin.pot (WP Google+1 0.2)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: wp1.php:51
+msgid "WP Google+1"
+msgstr ""
+
 #: wp1-menue.php:22
 msgid "WP Google +1 options page"
+msgstr ""
+
+#: wp1-menue.php:29
+msgid ""
+"To add the Google +1 button please use the following code in your template "
+"files."
+msgstr ""
+
+#: wp1-menue.php:35
+msgid "Please use instead of <b>size</b> one of the following values."
 msgstr ""
 
 #: wp1-menue.php:47
 msgid "Save"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "WP Google+1"
+#: wp1-menue.php:53
+msgid "This plugin ist provided by %1$s and developed by %2$s."
+msgstr ""
+
+#: wp1-menue.php:54
+msgid ""
+"<a href=\"%s\">You can leave a note about a bug or a feature request on "
+"github.</a>"
+msgstr ""
+
+#: wp1-menue.php:57
+msgid "Support the development"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

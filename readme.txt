@@ -37,6 +37,7 @@ You can find the looks [here](http://www.google.com/intl/de/webmasters/+1/button
 == Changelog ==
 
 = 0.3 =
+* Add: German Language
 * Fix: Some text was not multi language ready
 
 = 0.2 =
