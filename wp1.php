@@ -4,7 +4,7 @@ Plugin Name: WP Google+1
 Plugin URI: http://www.goopl.de
 Description: show all google +1 counts on the article overview
 Author: Sebastian Thiele
-Version: 0.2
+Version: 0.3
 Author URI: http://sebastian.thiele.me
 */
 $wpg1Options = get_option('wpg1');
