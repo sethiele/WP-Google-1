@@ -20,6 +20,7 @@ If you have some new stuff you want to have some new functions or find some bugs
 * [Plugin Page on Goopl.de](http://www.goopl.de/wordpress-plugin-wp-google1)
 * [Code at gitHub](https://github.com/sethiele/WP-Google-1)
 * [Issue Tracking (via GitHub)](https://github.com/sethiele/WP-Google-1/issues)
+* [Help to translate](http://crowdin.net/project/wp-google1)
 
 == Installation ==
 
