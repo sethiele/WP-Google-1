@@ -3,7 +3,7 @@ Contributors: sebat
 Tags: social media, google, google +1, seo
 Requires at least: 3.2.1
 Tested up to: 3.2.1
-Stable tag: 0.3
+Stable tag: 0.4
 
 Adds Google +1 stuff to the blog. E.g. a overview of the number of shared articles.
 
