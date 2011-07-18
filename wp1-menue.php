@@ -45,11 +45,11 @@ function wpg1_adminmenue_show()
                 </div>
                     
                 <div id="wpg1-option-add-g1-profile-link" class="postbox">
-                    <h3><input type="checkbox" name="wpg1-add-g1-profile-link" value="checked" <?php print $wpg1Options['wpg1-add-g1-profile-link']; ?> /> <?php _e('Give the authors the option to link there authorpage to ther google profile.', 'wpg1'); ?></h3>
+                    <h3><input type="checkbox" name="wpg1-add-g1-profile-link" value="checked" <?php print $wpg1Options['wpg1-add-g1-profile-link']; ?> /> <?php _e('Give the authors the option to link their author page to their Google profile.', 'wpg1'); ?></h3>
                     <?php if($wpg1Options['wpg1-add-g1-profile-link']): ?>
                     <div class="inside">
                         <p>
-                            <?php printf(__('This option aktivate a new profile field. There the author can add his Google or Google+ profile URL. Than you can add the following theme function to the author profile template file to show a google friendly author link inkludet the %1$s', 'wpg1'), 'rel="me"'); ?>
+                            <?php printf(__('This option activates a new profile field. The author can add his Google or Google+ profile URL. The author can add the following theme function to the author profile template file to show a Google friendly author link inkludet the %1$s.', 'wpg1'), 'rel="me"'); ?>
                         </p>
                         <pre style="font-famuly:Consolas, Monaco, 'Courier New', Courier, monospace; font-weight: bold;">
 &lt;?php
@@ -59,23 +59,23 @@ function wpg1_adminmenue_show()
 ?&gt;
                         </pre>
                         <p>
-                            <?php _e('<strong>userID</strong> the user id of the user. Get it from $user->ID'); ?>
+                            <?php _e('<strong>userID</strong> - The user id of the user. Get it from $user->ID.'); ?>
                         </p>
                         <p>
-                            <?php _e('<strong>anker</strong> this will be displayed as the ankertext of the link.<br>
-                            (otional) default: The users display name', 'wpg1'); ?>
+                            <?php _e('<strong>anker</strong> - This will be displayed as the ankertext of the link.<br>
+                            (optional) default: the user’s display name', 'wpg1'); ?>
                         </p>
                         <p>
-                            <?php _e('<strong>target</strong> in what target should the target page open?<br>
-                            (otional) default: self', 'wpg1'); ?>
+                            <?php _e('<strong>target</strong> - In what target should the target page open?<br>
+                            (optional) default: _self', 'wpg1'); ?>
                         </p>
                                                 
                         <p>
-                            <?php _e("If the user didn't fill out the URL, nothing will returned.", 'wpg1'); ?><br />
-                            <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=1229920" target="_blank"><?php printf(__('More informations about Googles authorship.', 'wpg1')); ?></a>
+                            <?php _e("If the user didn't fill out the URL, nothing will be returned.", 'wpg1'); ?><br />
+                            <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=1229920" target="_blank"><?php printf(__('More information about Google’s authorship', 'wpg1')); ?></a>
                         </p>
                         <p>
-                            <?php printf(__('We recommend to use the %1$s atribute in all links who link to the author profile.'), 'rel="author"'); ?>
+                            <?php printf(__('We recommend using the %1$s attribute in all links that link to the author profile.'), 'rel="author"'); ?>
                         </p>
                     </div>
                     <?php endif; ?>
