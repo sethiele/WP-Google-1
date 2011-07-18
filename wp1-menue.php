@@ -7,7 +7,8 @@ function wpg1_adminmenue_show()
     <?php
 		if($_POST[wpg1submit]){
 			$wpg1Options = array(
-			    "wpg1-addtheme"      =>  $_POST['wpg1-addtheme']
+			    "wpg1-add-theme"                =>  $_POST['wpg1-add-theme'],
+                "wpg1-add-g1-profile-link"      =>  $_POST['wpg1-add-g1-profile-link']
             );
             update_option('wpg1', $wpg1Options);
         }
@@ -21,19 +22,60 @@ function wpg1_adminmenue_show()
         <div class="wrap">
             <h1><?php _e('WP Google +1 options page', 'wpg1'); ?></h1>
             <div id="poststuff">
-                <div id="wpg1-option-intheme" class="postbox">
-                    <h3><input type="checkbox" name="wpg1-addtheme" value="checked" <?php print $wpg1Options['wpg1-addtheme']; ?> /> Add Google +1 button in your theme</h3>
-                    <?php if($wpg1Options['wpg1-addtheme']): ?>
+                <div id="wpg1-option-in-theme" class="postbox">
+                    <h3><input type="checkbox" name="wpg1-add-theme" value="checked" <?php print $wpg1Options['wpg1-add-theme']; ?> /> <?php _e('Add Google +1 button in your theme', 'wpg1'); ?></h3>
+                    <?php if($wpg1Options['wpg1-add-theme']): ?>
                     <div class="inside">
                         <p>
                             <?php _e('To add the Google +1 button please use the following code in your template files.', 'wpg1'); ?>
                         </p>
-                        <p style="font-famuly:Consolas, Monaco, 'Courier New', Courier, monospace; font-weight: bold;">
-                            &lt;?php if (function_exists('wpg1_g1button')){ print wpg1_g1button('size'); } ?&gt;
-                        </p>
+                        <pre style="font-famuly:Consolas, Monaco, 'Courier New', Courier, monospace; font-weight: bold;">
+&lt;?php 
+    if (function_exists('wpg1_g1button')){ 
+        print wpg1_g1button('size'); 
+    } 
+?&gt;
+                        </pre>
                         <p>
                             <? _e('Please use instead of <b>size</b> one of the following values.', 'wpg1'); ?><br />
                             small (15px), medium (20px), standard (24px) and large (60px)
+                        </p>
+                    </div>
+                    <?php endif; ?>
+                </div>
+                    
+                <div id="wpg1-option-add-g1-profile-link" class="postbox">
+                    <h3><input type="checkbox" name="wpg1-add-g1-profile-link" value="checked" <?php print $wpg1Options['wpg1-add-g1-profile-link']; ?> /> <?php _e('Give the authors the option to link there authorpage to ther google profile.', 'wpg1'); ?></h3>
+                    <?php if($wpg1Options['wpg1-add-g1-profile-link']): ?>
+                    <div class="inside">
+                        <p>
+                            <?php printf(__('This option aktivate a new profile field. There the author can add his Google or Google+ profile URL. Than you can add the following theme function to the author profile template file to show a google friendly author link inkludet the %1$s', 'wpg1'), 'rel="me"'); ?>
+                        </p>
+                        <pre style="font-famuly:Consolas, Monaco, 'Courier New', Courier, monospace; font-weight: bold;">
+&lt;?php
+    if (function_exists('wpg1_google_profile_link')){
+        print wpg1_google_profile_link('userID', 'anker', 'target');
+    }
+?&gt;
+                        </pre>
+                        <p>
+                            <?php _e('<strong>userID</strong> the user id of the user. Get it from $user->ID'); ?>
+                        </p>
+                        <p>
+                            <?php _e('<strong>anker</strong> this will be displayed as the ankertext of the link.<br>
+                            (otional) default: The users display name', 'wpg1'); ?>
+                        </p>
+                        <p>
+                            <?php _e('<strong>target</strong> in what target should the target page open?<br>
+                            (otional) default: self', 'wpg1'); ?>
+                        </p>
+                                                
+                        <p>
+                            <?php _e("If the user didn't fill out the URL, nothing will returned.", 'wpg1'); ?><br />
+                            <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=1229920" target="_blank"><?php printf(__('More informations about Googles authorship.', 'wpg1')); ?></a>
+                        </p>
+                        <p>
+                            <?php printf(__('We recommend to use the %1$s atribute in all links who link to the author profile.'), 'rel="author"'); ?>
                         </p>
                     </div>
                     <?php endif; ?>

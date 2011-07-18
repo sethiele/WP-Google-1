@@ -37,6 +37,10 @@ You can find the looks [here](http://www.google.com/intl/de/webmasters/+1/button
 
 == Changelog ==
 
+= 0.4 =
+* Add: [New Profile field for the authors google (+) profile to link the author page to his profile.](https://github.com/sethiele/WP-Google-1/issues/1 "Issue #1")
+* Fix: Multilanguage Problems (Used wrong .po-Files)
+
 = 0.3 =
 * Add: German Language
 * Fix: Some text was not multi language ready
