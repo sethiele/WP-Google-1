@@ -4,13 +4,12 @@ Plugin Name: WP Google+1
 Plugin URI: http://www.goopl.de
 Description: show all google +1 counts on the article overview
 Author: Sebastian Thiele
-Version: 0.4
+Version: 0.5
 Author URI: http://sebastian.thiele.me
 */
 $wpg1Options = get_option('wpg1');
-$wpg1Options = get_option('wpg1');
 $plugindir = basename(dirname(__FILE__));
-load_plugin_textdomain( 'wpg1', 'wp-content/plugins/' . $plugindir.'/lang', false );
+load_plugin_textdomain( 'wp1', 'wp-content/plugins/' . $plugindir.'/lang', false );
 include_once('wp1-menue.php');
 include_once('wp1-userprofile.php');
 
@@ -24,7 +23,7 @@ include_once('wp1-userprofile.php');
  */
 function wpg1_google_profile_link($userID, $anker = NULL, $target = '_self')
 {
-    if(!$userID) return __('Missing userID', 'wpg1');
+    if(!$userID) return __('Missing userID', 'wp1');
     if(!$anker) $anker = esc_attr( get_the_author_meta( 'display_name', $userID ) );
     $gprofile = esc_attr( get_user_meta( $userID, 'g1profile', true ) );
     if($gprofile) {
@@ -45,9 +44,23 @@ function wpg1_g1button($size = 'standart', $pid = NULL)
     return '<g:plusone size="'.$size.'" href="'.$plink.'"></g:plusone>';
 }
 
+/**
+  * render a Button out of the content
+  * @param content
+  */
+function wpg1_button_content($content)
+{
+    global $post;
+    $content = str_replace('[wpg1-small]', wpg1_g1button('small', $post->ID), $content);
+    $content = str_replace('[wpg1-medium]', wpg1_g1button('medium', $post->ID), $content);
+    $content = str_replace('[wpg1-standard]', wpg1_g1button('standard', $post->ID), $content);
+    $content = str_replace('[wpg1-large]', wpg1_g1button('large', $post->ID), $content);
+    return $content;
+}
+
 function wpg1_article_colum($columns)
 {
-    $columns['g1'] = __('Google +1', 'wpg1');
+    $columns['g1'] = __('Google +1', 'wp1');
     return $columns;
 }
 
@@ -86,11 +99,11 @@ add_filter('manage_posts_custom_column', 'wpg1_article_colum_content');
 
 // g+1 theme Functions
 add_filter('admin_head', 'wpg1_head');
-if($wpg1Options['wpg1-addtheme']) 
+if($wpg1Options['wpg1-add-theme']) 
 {
     add_filter('wp_head', 'wpg1_head');
+    add_filter('the_content', 'wpg1_button_content');
 }
-
 // Adminmenue
 add_action('admin_menu', 'wpg1_adminmenue');
 

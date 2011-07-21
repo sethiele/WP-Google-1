@@ -1,18 +1,21 @@
 === WP Google+1 ===
 Contributors: sebat
-Tags: social media, google, google +1, seo
-Requires at least: 3.2.1
+Tags: social media, google, google +1, google plus, authorship, seo
+Requires at least: 3.0
 Tested up to: 3.2.1
-Stable tag: 0.4
+Stable tag: 0.5
 
 Adds Google +1 stuff to the blog. E.g. a overview of the number of shared articles.
 
 == Description ==
 = Easy to use Google +1 Button für Wordpress =
-You can add on any place in your template the new Google +1 Button with a simple function call.
+You can add on any place in your template  or your content the new Google +1 Button with a simple function call. And add a Author Link.
 
 = Easy overview of given +1 in the article overview page =
 Go to the article overview page and see how many people give your article a +1. Also you and all other authors can give your articles a quick +1.
+
+= Easy to add a Author Link fpr Googles Authorship =
+With a new input field in the user profile area you can add a author link to your google or google plus profile to use googles new authorship.
 
 If you have some new stuff you want to have some new functions or find some bugs you can leave a your a note on [GitHub](https://github.com/sethiele/WP-Google-1/issues).
 
@@ -36,6 +39,10 @@ If you have some new stuff you want to have some new functions or find some bugs
 You can find the looks [here](http://www.google.com/intl/de/webmasters/+1/button/index.html "Google button generator").
 
 == Changelog ==
+
+= 0.5 =
+* Add: [Add the option to add a google +1 button in the post content](https://github.com/sethiele/WP-Google-1/issues/3)
+* Fix: [Cahnge the multilanguage domain. so german is avavible](https://github.com/sethiele/WP-Google-1/issues/2)
 
 = 0.4 =
 * Add: [New Profile field for the authors google (+) profile to link the author page to his profile.](https://github.com/sethiele/WP-Google-1/issues/1 "Issue #1")
