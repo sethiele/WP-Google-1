@@ -4,27 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-google1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp1\n"
-"POT-Creation-Date: 2011-07-18 12:05:17+00:00\n"
+"POT-Creation-Date: 2011-07-21 19:08:28+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2011-07-18 14:27+0100\n"
-"Last-Translator: Sebsatian <Sebastian.Thiele@affinitas.de>\n"
+"PO-Revision-Date: 2011-07-21 21:19+0100\n"
+"Last-Translator: Sebastian Thiele <translate.20.seat@xoxy.net>\n"
 "Language-Team: German\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: crowdin.net\n"
-
-#: wp1-userprofile.php:6
-msgid "Google +1 Profile"
-msgstr "Google +1 Profile"
-
-#: wp1-userprofile.php:9
-msgid "URL to Google +1 Profile"
-msgstr "URL zum Google +1 Profil"
-
-#: wp1-userprofile.php:12
-msgid "URL of your Google+ or (normal) Google profile. E.g. %s"
-msgstr "URL zu deinem Google+ oder (normalen) Google Profil. Z.B. %s"
 
 #: wp1-menue.php:23
 msgid "WP Google +1 options page"
@@ -39,22 +27,26 @@ msgid "To add the Google +1 button please use the following code in your templat
 msgstr "Um den Google +1 Button in dein Template einzufügen benutze den folgenden Code."
 
 #: wp1-menue.php:40
+msgid "To add this button in your post content. Add the following text in your content."
+msgstr "Um diesen Google +1 Button innerhalb deines Posts zu verwenden, füge den folgenden Code in deinen Post ein."
+
+#: wp1-menue.php:46
 msgid "Please use instead of <b>size</b> one of the following values."
 msgstr "Bitte benutze anstelle von <b>größe</b> einen der folgenden Werte."
 
-#: wp1-menue.php:48
+#: wp1-menue.php:54
 msgid "Give the authors the option to link their author page to their Google profile."
 msgstr "Geben Sie den Autoren die Möglichkeit, ihre Autoren Seite mit ihren Google-Profilen zu verlinken."
 
-#: wp1-menue.php:52
+#: wp1-menue.php:58
 msgid "This option activates a new profile field. The author can add his Google or Google+ profile URL. The author can add the following theme function to the author profile template file to show a Google friendly author link inkludet the %1$s."
 msgstr "Diese Option aktiviert ein neues Feld in den Benutzereigenschaften jedes Benutzers. Dort kann der Autor seinen persönlichen Google oder Google+ Profillink eintragen. Mit der folgenden Themefunktion kann dann ein Google freundlicher Link angezeigt werden, der das %1$s benutzt."
 
-#: wp1-menue.php:62
+#: wp1-menue.php:68
 msgid "<strong>userID</strong> - The user id of the user. Get it from $user->ID."
 msgstr "<strong>userID</strong> - Die Benutzer ID des Benutzers. Bekommt man von $user->ID."
 
-#: wp1-menue.php:65
+#: wp1-menue.php:71
 msgid ""
 "<strong>anker</strong> - This will be displayed as the ankertext of the link.<br>\n"
 "                            (optional) default: the user’s display name"
@@ -62,7 +54,7 @@ msgstr ""
 "<strong>anker</strong> - Dies wird als Ankertext für den Link verwendet.<br>\n"
 "                            (optional) Standard: Anzeigename des Benutzers"
 
-#: wp1-menue.php:69
+#: wp1-menue.php:75
 msgid ""
 "<strong>target</strong> - In what target should the target page open?<br>\n"
 "                            (optional) default: _self"
@@ -70,39 +62,73 @@ msgstr ""
 "<strong>target</strong> - In welchem \"target\" soll sich die neue Seite öffnen?<br>\n"
 "(optional) Standard: _self"
 
-#: wp1-menue.php:74
+#: wp1-menue.php:80
 msgid "If the user didn't fill out the URL, nothing will be returned."
 msgstr "Wenn der Benutzer keine URL angibt, wird nichts angezeigt."
 
-#: wp1-menue.php:75
+#: wp1-menue.php:81
 msgid "More information about Google’s authorship"
 msgstr "Mehr Informationen über Googles \"Authorship\""
 
-#: wp1-menue.php:78
+#: wp1-menue.php:84
 msgid "We recommend using the %1$s attribute in all links that link to the author profile."
 msgstr "Wir empfehlen das %1$s Attribut in allen Links vom Autor zur Autorenseite zu verwenden."
 
-#: wp1-menue.php:89
+#: wp1-menue.php:95
 msgid "Save"
 msgstr "Speichern"
 
-#: wp1-menue.php:95
+#: wp1-menue.php:101
 msgid "This plugin ist provided by %1$s and developed by %2$s."
 msgstr "Das Plugin wird bereitgestellt von %1$s und entwickelt von %2$s."
 
-#: wp1-menue.php:96
+#: wp1-menue.php:102
 msgid "<a href=\"%s\">You can leave a note about a bug or a feature request on github.</a>"
 msgstr "<a href=\"%s\">Du kannst eine Nachricht über einen Bug oder einen Wunsch für neue Funktionen auf gitHub hinterlassen.</a>"
 
-#: wp1-menue.php:99
+#: wp1-menue.php:105
 msgid "Support the development"
 msgstr "Unterstütze die Entwicklung"
 
-#: wp1.php:27
+#: wp1-userprofile.php:6
+msgid "Google +1 Profile"
+msgstr "Google +1 Profile"
+
+#: wp1-userprofile.php:9
+msgid "URL to Google +1 Profile"
+msgstr "URL zum Google +1 Profil"
+
+#: wp1-userprofile.php:12
+msgid "URL of your Google+ or (normal) Google profile. E.g. %s"
+msgstr "URL zu deinem Google+ oder (normalen) Google Profil. Z.B. %s"
+
+#: wp1.php:26
 msgid "Missing userID"
 msgstr "Fehlende Benutzer ID"
 
-#: wp1.php:50
+#: wp1.php:63
 msgid "Google +1"
 msgstr "Google + 1"
+
+#. #-#-#-#-#  plugin.pot (WP Google+1 0.5)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: wp1.php:88
+msgid "WP Google+1"
+msgstr "WP Google+1"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.goopl.de"
+msgstr "http://www.goopl.de"
+
+#. Description of the plugin/theme
+msgid "show all google +1 counts on the article overview"
+msgstr "Zeige alle Google+1 Zahlen in der Artikelübersicht"
+
+#. Author of the plugin/theme
+msgid "Sebastian Thiele"
+msgstr "Sebastian Thiele"
+
+#. Author URI of the plugin/theme
+msgid "http://sebastian.thiele.me"
+msgstr "http://sebastian.thiele.me"
 
