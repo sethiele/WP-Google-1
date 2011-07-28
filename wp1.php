@@ -4,7 +4,7 @@ Plugin Name: WP Google+1
 Plugin URI: http://www.goopl.de
 Description: show all google +1 counts on the article overview
 Author: Sebastian Thiele
-Version: 0.5
+Version: 0.6
 Author URI: http://sebastian.thiele.me
 */
 $wpg1Options = get_option('wpg1');
@@ -83,6 +83,20 @@ function wpg1_head($content)
     </script>';
 }
 
+// show the js code in the footer
+function wpg1_footer($content)
+{
+    print '<script type="text/javascript">
+  window.___gcfg = {lang: \''.get_bloginfo('language').'\'};
+
+  (function() {
+    var po = document.createElement(\'script\'); po.type = \'text/javascript\'; po.async = true;
+    po.src = \'https://apis.google.com/js/plusone.js\';
+    var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>';    
+}
+
 function wpg1_adminmenue()
 {
     add_options_page(__('WP Google+1'), __('WP Google+1'), 'manage_options', 'wpg1', 'wpg1_adminmenue_show');
@@ -98,10 +112,12 @@ add_filter('manage_posts_columns', 'wpg1_article_colum');
 add_filter('manage_posts_custom_column', 'wpg1_article_colum_content');
 
 // g+1 theme Functions
-add_filter('admin_head', 'wpg1_head');
+//add_filter('admin_head', 'wpg1_head');
+add_filter('admin_footer', 'wpg1_footer');
 if($wpg1Options['wpg1-add-theme']) 
 {
-    add_filter('wp_head', 'wpg1_head');
+    //add_filter('wp_head', 'wpg1_head');
+    add_filter('wp_footer', 'wpg1_footer');
     add_filter('the_content', 'wpg1_button_content');
 }
 // Adminmenue
