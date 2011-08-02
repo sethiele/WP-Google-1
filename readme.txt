@@ -5,7 +5,7 @@ Tags: social media, google, google +1, seo, google plus
 Requires at least: 3.0
 Requires at least: 3.2.1
 Tested up to: 3.2.1
-Stable tag: 0.6
+Stable tag: 0.7
 
 Adds Google +1 stuff to the blog. E.g. a overview of the number of shared articles.
 

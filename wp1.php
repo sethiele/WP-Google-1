@@ -4,7 +4,7 @@ Plugin Name: WP Google+1
 Plugin URI: http://www.goopl.de
 Description: show all google +1 counts on the article overview
 Author: Sebastian Thiele
-Version: 0.6
+Version: 0.7
 Author URI: http://sebastian.thiele.me
 */
 $wpg1Options = get_option('wpg1');
@@ -12,6 +12,7 @@ $plugindir = basename(dirname(__FILE__));
 load_plugin_textdomain( 'wp1', 'wp-content/plugins/' . $plugindir.'/lang', false );
 include_once('wp1-menue.php');
 include_once('wp1-userprofile.php');
+include_once('wpg1_sb_1.php');
 
 
 /**
@@ -39,8 +40,12 @@ function wpg1_google_profile_link($userID, $anker = NULL, $target = '_self')
 function wpg1_g1button($size = 'standart', $pid = NULL)
 {
     global $post;
-    if($pid) $plink = get_permalink($pid);
-    else $plink = get_permalink($post->ID);
+    if(substr($pid, 0, 4) == 'http') {
+        $plink = $pid;
+    } else {
+        if($pid) $plink = get_permalink($pid);
+        else $plink = get_permalink($post->ID);
+    }
     return '<g:plusone size="'.$size.'" href="'.$plink.'"></g:plusone>';
 }
 
@@ -107,6 +112,37 @@ function wpg1_deactivate()
     delete_option('wpg1');
 }
 
+// Register Sidebar for g+1 Button
+wp_register_sidebar_widget( 
+    'wpg1_sb_1', 
+    __('Google+1 Sidebar Button'),
+    'wpg1_sb_1_display',
+    array(
+       'description' => __('A Single Google +1 Button for your sidebar. You can decide what kind of Target the +1 have. E.g. give a +1 for the current shown page or for a special page like the front URL.')
+    )
+);
+
+// Register Sidebar Menue for g+1 button
+wp_register_widget_control(
+    'wpg1_sb_1',
+    __('Google+1 Sidebar Button'),
+    'wpg1_sb_1_options'
+);
+
+// TODO: Sidebar 1 output
+function wpg1_sb_1_display(){
+    $options = get_option('wpg1');
+    print $before_widget;
+    print $before_title;
+    print '<h3 class="widget-title">'.$options['wpg1-sb1-title'].'</h3>';
+    print $after_title;
+    print '<div id="wpg1-sb-p1-btn">'.wpg1_g1button('large', 'http://www.goopl.de').'</div>';
+    print $after_widget;
+    
+}
+//register_sidebar_widget("Show QR URL", "widget_showQRURL");
+//register_widget_control("Show QR URL", "showQRURL_control", 300, 200);
+
 // Extra column
 add_filter('manage_posts_columns', 'wpg1_article_colum');
 add_filter('manage_posts_custom_column', 'wpg1_article_colum_content');
@@ -135,5 +171,6 @@ if($wpg1Options['wpg1-add-g1-profile-link'])
     add_action( 'personal_options_update', 'wpg1_save_user_profile_fields' );
     add_action( 'edit_user_profile_update', 'wpg1_save_user_profile_fields' );
 }
+
 
 ?>
