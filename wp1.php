@@ -13,6 +13,7 @@ load_plugin_textdomain( 'wp1', 'wp-content/plugins/' . $plugindir.'/lang', false
 include_once('wp1-menue.php');
 include_once('wp1-userprofile.php');
 include_once('wpg1_sb_1.php');
+include_once('wpg1_sb_2.php');
 
 
 /**
@@ -22,13 +23,14 @@ include_once('wpg1_sb_1.php');
  * @param target target of the link
  * @return a HTML link to enter in the theme
  */
-function wpg1_google_profile_link($userID, $anker = NULL, $target = '_self')
+function wpg1_google_profile_link($userID, $anker = NULL, $target = '_self', $option = array())
 {
+    if( !isset($option['rel']) ) $option['rel'] = 'me';
     if(!$userID) return __('Missing userID', 'wp1');
     if(!$anker) $anker = esc_attr( get_the_author_meta( 'display_name', $userID ) );
     $gprofile = esc_attr( get_user_meta( $userID, 'g1profile', true ) );
     if($gprofile) {
-        return '<a href="'.$gprofile.'" target="'.$target.'" rel="me">'.$anker.'</a>';
+        return '<a href="'.$gprofile.'" target="'.$target.'" rel="'.$option['rel'].'">'.$anker.'</a>';
     }
     else {
         return;
@@ -112,6 +114,23 @@ function wpg1_deactivate()
     delete_option('wpg1');
 }
 
+// Register Sidebar for SingleUser Authorlink
+wp_register_sidebar_widget( 
+    'wpg1_sb_2', 
+    __('Authorlink'),
+    'wpg1_sb_2_display',
+    array(
+       'description' => __('Only for single user blogs helpfull. This sidebar provides a Author Link and linkes so all content to one user. (If this is a multiuser Blog lakk at the plugin option page for this function.)')
+    )
+);
+
+// Register Sidebar Menue for authorlink
+wp_register_widget_control(
+    'wpg1_sb_2',
+    __('Authorlink to google/ google+ profile'),
+    'wpg1_sb_2_options'
+);
+
 // Register Sidebar for g+1 Button
 wp_register_sidebar_widget( 
     'wpg1_sb_1', 
@@ -128,26 +147,6 @@ wp_register_widget_control(
     __('Google+1 Sidebar Button'),
     'wpg1_sb_1_options'
 );
-
-// TODO: Sidebar 1 output
-function wpg1_sb_1_display(){
-    $options = get_option('wpg1');
-    $gplurl = ($options['wpg1-sb1-target'] == 'mainpage')?get_bloginfo('wpurl'):'http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-    print '<!-- Wordpress Google+ Plugin by - http://www.goopl.de -->';
-    print $before_widget;
-    print $before_title;
-    print '<h3 class="widget-title">'.$options['wpg1-sb1-title'].'</h3>';
-    print $after_title;
-    if( isset( $options['wpg1-sb1-txt1'] ) ) 
-        print '<div id="wpg1-sb-p1-txt1">'.stripslashes( $options['wpg1-sb1-txt1'] ).'</div>';
-    print '<div id="wpg1-sb-p1-btn">'.wpg1_g1button($options['wpg1-sb1-size'], $gplurl).'</div>';
-    if( isset( $options['wpg1-sb1-txt2'] ) ) 
-        print '<div id="wpg1-sb-p1-txt2">'.stripslashes( $options['wpg1-sb1-txt2'] ).'</div>';
-    print $after_widget;
-    
-}
-//register_sidebar_widget("Show QR URL", "widget_showQRURL");
-//register_widget_control("Show QR URL", "showQRURL_control", 300, 200);
 
 // Extra column
 add_filter('manage_posts_columns', 'wpg1_article_colum');

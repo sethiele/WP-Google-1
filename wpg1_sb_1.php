@@ -1,6 +1,5 @@
 <?php
 
-// TODO: Sidebar 1 Menue
 function wpg1_sb_1_options(){
     $options = get_option('wpg1');
     if($_POST['wpg1-sb1-submit'])
@@ -54,6 +53,22 @@ function wpg1_sb_1_options(){
     <?php
 }
 
-
+// Sidebar 1 (g+1 Button) Output
+function wpg1_sb_1_display(){
+    $options = get_option('wpg1');
+    $gplurl = ($options['wpg1-sb1-target'] == 'mainpage')?get_bloginfo('wpurl'):'http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+    print '<!-- Wordpress Google+ Plugin by - http://www.goopl.de -->';
+    print $before_widget;
+    print $before_title;
+    print '<h3 class="widget-title">'.$options['wpg1-sb1-title'].'</h3>';
+    print $after_title;
+    if( isset( $options['wpg1-sb1-txt1'] ) ) 
+        print '<div id="wpg1-sb-p1-txt1">'.stripslashes( $options['wpg1-sb1-txt1'] ).'</div>';
+    print '<div id="wpg1-sb-p1-btn">'.wpg1_g1button($options['wpg1-sb1-size'], $gplurl).'</div>';
+    if( isset( $options['wpg1-sb1-txt2'] ) ) 
+        print '<div id="wpg1-sb-p1-txt2">'.stripslashes( $options['wpg1-sb1-txt2'] ).'</div>';
+    print $after_widget;
+    
+}
 
 ?>
