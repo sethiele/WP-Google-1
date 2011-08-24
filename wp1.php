@@ -4,7 +4,7 @@ Plugin Name: WP Google+1
 Plugin URI: http://www.goopl.de
 Description: show all google +1 counts on the article overview
 Author: Sebastian Thiele
-Version: 0.7
+Version: 1.0
 Author URI: http://sebastian.thiele.me
 */
 $wpg1Options = get_option('wpg1');
@@ -132,11 +132,17 @@ wp_register_widget_control(
 // TODO: Sidebar 1 output
 function wpg1_sb_1_display(){
     $options = get_option('wpg1');
+    $gplurl = ($options['wpg1-sb1-target'] == 'mainpage')?get_bloginfo('wpurl'):'http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+    print '<!-- Wordpress Google+ Plugin by - http://www.goopl.de -->';
     print $before_widget;
     print $before_title;
     print '<h3 class="widget-title">'.$options['wpg1-sb1-title'].'</h3>';
     print $after_title;
-    print '<div id="wpg1-sb-p1-btn">'.wpg1_g1button('large', 'http://www.goopl.de').'</div>';
+    if( isset( $options['wpg1-sb1-txt1'] ) ) 
+        print '<div id="wpg1-sb-p1-txt1">'.stripslashes( $options['wpg1-sb1-txt1'] ).'</div>';
+    print '<div id="wpg1-sb-p1-btn">'.wpg1_g1button($options['wpg1-sb1-size'], $gplurl).'</div>';
+    if( isset( $options['wpg1-sb1-txt2'] ) ) 
+        print '<div id="wpg1-sb-p1-txt2">'.stripslashes( $options['wpg1-sb1-txt2'] ).'</div>';
     print $after_widget;
     
 }

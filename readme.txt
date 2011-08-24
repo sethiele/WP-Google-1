@@ -5,7 +5,7 @@ Tags: social media, google, google +1, seo, google plus
 Requires at least: 3.0
 Requires at least: 3.2.1
 Tested up to: 3.2.1
-Stable tag: 0.7
+Stable tag: 1.0
 
 Adds Google +1 stuff to the blog. E.g. a overview of the number of shared articles.
 
@@ -41,6 +41,9 @@ If you have some new stuff you want to have some new functions or find some bugs
 You can find the looks [here](http://www.google.com/intl/de/webmasters/+1/button/index.html "Google button generator").
 
 == Changelog ==
+
+= 1.0 =
+* ADD: [#4](https://github.com/sethiele/WP-Google-1/issues/4) Add the option to show the google +1 Button as a widget in the sidebar
 
 = 0.6 =
 * Change: [#7](https://github.com/sethiele/WP-Google-1/issues/7) Changing from sync. to async. to improve the page speed.

@@ -7,26 +7,46 @@ function wpg1_sb_1_options(){
     {
         $options['wpg1-sb1-title']      = $_POST['wpg1-sb1-title'];
         $options['wpg1-sb1-size']       = $_POST['wpg1-sb1-size'];
+        $options['wpg1-sb1-target']     = $_POST['wpg1-sb1-target'];
+        $options['wpg1-sb1-txt1']       = $_POST['wpg1-sb1-txt1'];
+        $options['wpg1-sb1-txt2']       = $_POST['wpg1-sb1-txt2'];
         update_option('wpg1', $options);
     }
     if(!$options['wpg1-sb1-size']){
         $options['wpg1-sb1-size'] = 'standard';
     }
-    $site[$options['wpg1-sb1-size']] = 'selected';
+    $size[$options['wpg1-sb1-size']] = 'selected';
+    $url[$options['wpg1-sb1-target']] = 'selected';
     
     ?>
     <p>
         <label for="wpg1-sb1-title"><?php _e('Title', 'wp1'); ?>:</label><br />
-        <input type="text" id="wpg1-sb1-title" name="wpg1-sb1-title" value="<?php print $options['wpg1-sb1-title']; ?>" />
+        <input type="text" id="wpg1-sb1-title" name="wpg1-sb1-title" value="<?php print $options['wpg1-sb1-title']; ?>" style="width:100%" />
     </p>
     <p>
         <label for="wpg1-sb1-size"><?php _e('Button size', 'wp1'); ?>:</label><br />
-        <select id="wpg1-sb1-size" name="wpg1-sb1-size">
-            <option value="small" <?php print $site['small']; ?>><?php _e('small', 'wp1'); ?></option>
-            <option value="medium" <?php print $site['medium']; ?>><?php _e('medium', 'wp1'); ?></option>
-            <option value="standard" <?php print $site['standard']; ?>><?php _e('standard', 'wp1'); ?></option>
-            <option value="large"  <?php print $site['large']; ?>><?php _e('large', 'wp1'); ?></option>
+        <select id="wpg1-sb1-size" name="wpg1-sb1-size" style="width:100%">
+            <option value="small" <?php print $size['small']; ?>><?php _e('small', 'wp1'); ?></option>
+            <option value="medium" <?php print $size['medium']; ?>><?php _e('medium', 'wp1'); ?></option>
+            <option value="standard" <?php print $size['standard']; ?>><?php _e('standard', 'wp1'); ?></option>
+            <option value="large"  <?php print $size['large']; ?>><?php _e('large', 'wp1'); ?></option>
         </select>
+    </p>
+    <p>
+        <label for="wpg1-sb1-target"><?php _e('Target for the +1 Button', 'wp1'); ?></label>
+        <select id="wpg1-sb1-target" name="wpg1-sb1-target" style="width:100%">
+            <option value="mainpage" <?php print $url['mainpage']; ?>><?php _e('Blog mainpage', 'wp1'); ?></option>
+            <option value="current"  <?php print $url['current']; ?>><?php _e('The shown page', 'wp1'); ?></option>
+            <!-- TODO <option value="special"  <?php print $url['special']; ?>><?php _e('A fix given URL', 'wp1'); ?></option> -->
+        </select>
+    </p>
+    <p>
+        <label for="wpg1-sb1-txt1"><?php _e('Text above the button.', 'wp1'); ?></label>
+        <textarea id="wpg1-sb1-txt1" name="wpg1-sb1-txt1" style="width:100%"><?php print stripslashes( $options['wpg1-sb1-txt1'] ); ?></textarea>
+    </p>
+    <p>
+        <label for="wpg1-sb1-txt2"><?php _e('Text under the button.', 'wp1'); ?></label>
+        <textarea id="wpg1-sb1-txt2" name="wpg1-sb1-txt2" style="width:100%"><?php print stripslashes( $options['wpg1-sb1-txt2'] ); ?></textarea>
     </p>
     
     
