@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the WP Google+1 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Google+1 0.5\n"
+"Project-Id-Version: WP Google+1 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp1\n"
-"POT-Creation-Date: 2011-07-21 19:08:28+00:00\n"
+"POT-Creation-Date: 2011-08-25 13:13:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -112,18 +112,137 @@ msgstr ""
 msgid "URL of your Google+ or (normal) Google profile. E.g. %s"
 msgstr ""
 
-#: wp1.php:26
+#: wpg1_sb_2.php:20
+msgid ""
+"Please activate the Google Profile option at the plugin option page first."
+msgstr ""
+
+#: wpg1_sb_2.php:24 wpg1_sb_1.php:22
+msgid "Title"
+msgstr ""
+
+#: wpg1_sb_2.php:29
+msgid "Choose the Google Profile of which blog user."
+msgstr ""
+
+#: wpg1_sb_2.php:31
+msgid "select"
+msgstr ""
+
+#: wpg1_sb_2.php:37
+msgid "has no profillink"
+msgstr ""
+
+#: wpg1_sb_2.php:44
+msgid "Anker Text for the link"
+msgstr ""
+
+#: wpg1_sb_2.php:46
+msgid "Use the google icon"
+msgstr ""
+
+#: wpg1_sb_2.php:52
+msgid "Image size"
+msgstr ""
+
+#: wpg1_sb_2.php:56
+msgid "Text above the link."
+msgstr ""
+
+#: wpg1_sb_2.php:60
+msgid "Text under the link."
+msgstr ""
+
+#: wp1.php:30
 msgid "Missing userID"
 msgstr ""
 
-#: wp1.php:63
+#: wp1.php:71
 msgid "Google +1"
 msgstr ""
 
-#. #-#-#-#-#  plugin.pot (WP Google+1 0.5)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (WP Google+1 1.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: wp1.php:88
+#: wp1.php:110
 msgid "WP Google+1"
+msgstr ""
+
+#: wp1.php:121
+msgid "Authorlink"
+msgstr ""
+
+#: wp1.php:124
+msgid ""
+"Only for single user blogs helpfull. This sidebar provides a Author Link and "
+"linkes so all content to one user. (If this is a multiuser Blog lakk at the "
+"plugin option page for this function.)"
+msgstr ""
+
+#: wp1.php:131
+msgid "Authorlink to google/ google+ profile"
+msgstr ""
+
+#: wp1.php:138 wp1.php:148
+msgid "Google+1 Sidebar Button"
+msgstr ""
+
+#: wp1.php:141
+msgid ""
+"A Single Google +1 Button for your sidebar. You can decide what kind of "
+"Target the +1 have. E.g. give a +1 for the current shown page or for a "
+"special page like the front URL."
+msgstr ""
+
+#: wp1.php:184
+msgid "GooPl.de RSS-Feed"
+msgstr ""
+
+#: wp1-gooplrss.php:11
+msgid "<strong>RSS Error:</strong>: %s"
+msgstr ""
+
+#: wpg1_sb_1.php:26
+msgid "Button size"
+msgstr ""
+
+#: wpg1_sb_1.php:28
+msgid "small"
+msgstr ""
+
+#: wpg1_sb_1.php:29
+msgid "medium"
+msgstr ""
+
+#: wpg1_sb_1.php:30
+msgid "standard"
+msgstr ""
+
+#: wpg1_sb_1.php:31
+msgid "large"
+msgstr ""
+
+#: wpg1_sb_1.php:35
+msgid "Target for the +1 Button"
+msgstr ""
+
+#: wpg1_sb_1.php:37
+msgid "Blog mainpage"
+msgstr ""
+
+#: wpg1_sb_1.php:38
+msgid "The shown page"
+msgstr ""
+
+#: wpg1_sb_1.php:39
+msgid "A fix given URL"
+msgstr ""
+
+#: wpg1_sb_1.php:43
+msgid "Text above the button."
+msgstr ""
+
+#: wpg1_sb_1.php:47
+msgid "Text under the button."
 msgstr ""
 
 #. Plugin URI of the plugin/theme
