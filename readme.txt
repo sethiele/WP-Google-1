@@ -1,5 +1,6 @@
 === WP Google+1 ===
 Contributors: sebat
+Donate Link: https://flattr.com/thing/345480/WP-Google-1
 Tags: social media, google, google +1, google plus, authorship, seo
 Tags: social media, google, google +1, seo, google plus
 Requires at least: 3.0
@@ -40,10 +41,18 @@ If you have some new stuff you want to have some new functions or find some bugs
 
 You can find the looks [here](http://www.google.com/intl/de/webmasters/+1/button/index.html "Google button generator").
 
+= Can I design the sidebars a bit more? =
+
+Yes. Feel free to look in the HTML source code to find all css classes or ids to design it the way you like.
+
 == Changelog ==
 
 = 1.0 =
+This Version is a bigger release with some new coole stuff. If you find any Bugs or have cool new stuff you wont in a future release [report it](https://github.com/sethiele/WP-Google-1/issues).
+
 * ADD: [#4](https://github.com/sethiele/WP-Google-1/issues/4) Add the option to show the google +1 Button as a widget in the sidebar
+* ADD: [#5](https://github.com/sethiele/WP-Google-1/issues/5) Add the option to show a author-link as a sidebar element.
+* ADD: [#6](https://github.com/sethiele/WP-Google-1/issues/6) Add the [GooPl.de](http://www.goopl.de) RSS-Feed to dashboard
 
 = 0.6 =
 * Change: [#7](https://github.com/sethiele/WP-Google-1/issues/7) Changing from sync. to async. to improve the page speed.
@@ -71,3 +80,9 @@ You can find the looks [here](http://www.google.com/intl/de/webmasters/+1/button
 
 = 0.6. =
 * To improve the pagespeed
+
+== Screenshots ==
+
+1. Plugin Admin Page
+
+2. Widget Page

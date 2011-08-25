@@ -14,6 +14,7 @@ include_once('wp1-menue.php');
 include_once('wp1-userprofile.php');
 include_once('wpg1_sb_1.php');
 include_once('wpg1_sb_2.php');
+include_once('wp1-gooplrss.php');
 
 
 /**
@@ -176,6 +177,15 @@ if($wpg1Options['wpg1-add-g1-profile-link'])
     add_action( 'personal_options_update', 'wpg1_save_user_profile_fields' );
     add_action( 'edit_user_profile_update', 'wpg1_save_user_profile_fields' );
 }
+
+// Add RSS to dashboard
+function wpg1_rss_add_dashboard()
+{
+    wp_add_dashboard_widget( 'wpg1gooplrss', __('GooPl.de RSS-Feed', 'wp1'), 'wpg1_feed' );
+}
+
+// Initialize dashboard
+add_action( 'wp_dashboard_setup', 'wpg1_rss_add_dashboard' );
 
 
 ?>
