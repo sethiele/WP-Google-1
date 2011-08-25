@@ -45,10 +45,10 @@ function wpg1_sb_2_options(){
         <input type="text" id="wpg1-sb2-anker" name="wpg1-sb2-anker" value="<?php print $options['wpg1-sb2-anker']; ?>" style="width:100%" /><br />
         <input type="checkbox" id="wpg1-sb2-ankerimg" name="wpg1-sb2-ankerimg" value="checked" <?php print $options['wpg1-sb2-ankerimg']; ?> /> <?php _e('Use the google icon'); ?>: <img src="http://www.google.com/images/icons/ui/gprofile_button-16.png" width="16" height="16"><br />
         <select id="wpg1-sb2-imgsize" name="wpg1-sb2-imgsize">
-            <option value="16" <?php print $size['16px']; ?>>16px</option>
-            <option value="32" <?php print $size['32px']; ?>>32px</option>
-            <option value="44" <?php print $size['44px']; ?>>44px</option>
-            <option value="64" <?php print $size['64px']; ?>>64px</option>
+            <option value="16" <?php print $size['16']; ?>>16px</option>
+            <option value="32" <?php print $size['32']; ?>>32px</option>
+            <option value="44" <?php print $size['44']; ?>>44px</option>
+            <option value="64" <?php print $size['64']; ?>>64px</option>
         </select> <?php _e('Image size', 'wp1'); ?>
     </p>
     
@@ -77,7 +77,14 @@ function wpg1_sb_2_display(){
     print $after_title;
     if( isset( $options['wpg1-sb2-txt1'] ) ) 
         print '<div id="wpg1-sb-p2-txt1">'.stripslashes( $options['wpg1-sb2-txt1'] ).'</div>';
-    print wpg1_google_profile_link($options['wpg1-sb2-user'], $options['wpg1-sb2-anker'], 'self', array('rel' => 'author') );
+    
+    if( $options['wpg1-sb2-ankerimg'] )
+        $ankerimg = '<img src="http://www.google.com/images/icons/ui/gprofile_button-'.$options['wpg1-sb2-imgsize'].'.png" width="'.$options['wpg1-sb2-imgsize'].'" height="'.$options['wpg1-sb2-imgsize'].'" id="wpg1-sb-p2-img">';
+    else 
+        $ankerimg = NULL;
+    $ankertxt = '<span id="wpg1-sb-p2-anker">'.$options['wpg1-sb2-anker'].'</span>';
+    print wpg1_google_profile_link($options['wpg1-sb2-user'], $ankerimg.' '.$options['wpg1-sb2-anker'], 'self', array('rel' => 'author') );
+    
     if( isset( $options['wpg1-sb2-txt2'] ) ) 
         print '<div id="wpg1-sb-p2-txt2">'.stripslashes( $options['wpg1-sb2-txt2'] ).'</div>';
     print $after_widget;
