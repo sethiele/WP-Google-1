@@ -6,7 +6,7 @@ Tags: social media, google, google +1, seo, google plus
 Requires at least: 3.0
 Requires at least: 3.2.1
 Tested up to: 3.2.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Adds Google +1 stuff to the blog. E.g. a overview of the number of shared articles.
 
@@ -46,6 +46,9 @@ You can find the looks [here](http://www.google.com/intl/de/webmasters/+1/button
 Yes. Feel free to look in the HTML source code to find all css classes or ids to design it the way you like.
 
 == Changelog ==
+
+= 1.0.1 =
+* Wordpress had problems to provide the version 1.0 correctly
 
 = 1.0 =
 This Version is a bigger release with some new coole stuff. If you find any Bugs or have cool new stuff you wont in a future release [report it](https://github.com/sethiele/WP-Google-1/issues).
