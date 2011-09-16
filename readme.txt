@@ -1,4 +1,4 @@
-=== WP Google+1 ===
+=== WP Google Plus ===
 Contributors: sebat
 Donate Link: https://flattr.com/thing/345480/WP-Google-1
 Tags: social media, google, google +1, google plus, authorship, seo

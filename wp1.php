@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: WP Google+1
+Plugin Name: WP Google Plus
 Plugin URI: http://www.goopl.de
-Description: show all google +1 counts on the article overview
+Description: Add the google plus one button to the sidebar, contenttag or theme function. provides authorlinks and show a google+ stream in the sidebar
 Author: Sebastian Thiele
 Version: 1.0.1
 Author URI: http://sebastian.thiele.me
@@ -14,6 +14,7 @@ include_once('wp1-menue.php');
 include_once('wp1-userprofile.php');
 include_once('wpg1_sb_1.php');
 include_once('wpg1_sb_2.php');
+include_once('wpg1_sb_3.php');
 include_once('wp1-gooplrss.php');
 
 
@@ -148,6 +149,25 @@ wp_register_widget_control(
     __('Google+1 Sidebar Button'),
     'wpg1_sb_1_options'
 );
+
+// Register Sidebar for Google Plus stream
+wp_register_sidebar_widget( 
+    'wpg1_sb_3', 
+    __('Google Plus Userstream'),
+    'wpg1_sb_3_display',
+    array(
+       'description' => __('Shows a google plus user stream')
+    )
+);
+
+// Register Sidebar Menue for g+1 button
+wp_register_widget_control(
+    'wpg1_sb_3',
+    __('Google Plus Stream'),
+    'wpg1_sb_3_options'
+);
+
+
 
 // Extra column
 add_filter('manage_posts_columns', 'wpg1_article_colum');
